@@ -1,0 +1,95 @@
+.orders-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav-container {
+  height: calc(100vh - 64px); /* Resta altura del toolbar */
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.content {
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.logo-img {
+  width: 150px;
+  height: 150px;
+}
+
+.create-order-btn {
+  background-color: #22c55e !important;
+  color: white !important;
+}
+
+.status-chip {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.status-chip.requested {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.status-chip.released {
+  background-color: #e0f2fe;
+  color: #2563eb;
+}
+
+.status-chip.approved {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.status-chip.closed {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-chip.canceled {
+  background-color: #f3e8ff;
+  color: #7c3aed;
+}
+
+.main-row {
+  cursor: pointer;
+}
+
+.expanded-content {
+  background-color: #f3f4f6;
+  padding: 16px;
+  border-left: 4px solid #22c55e;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.expanded-row {
+  background-color: #f9fafb;
+}
