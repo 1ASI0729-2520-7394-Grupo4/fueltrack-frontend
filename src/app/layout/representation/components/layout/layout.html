@@ -1,0 +1,45 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="logo-container">
+      <img src="assets/logo-fueltrack.png" alt="FuelTrack logo" class="logo-img" />
+    </div>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/app/admin">
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span class="nav-label">Admin</span>
+      </a>
+      <a mat-list-item routerLink="/app/orders">
+        <mat-icon>shopping_cart</mat-icon>
+        <span class="nav-label">Orders</span>
+      </a>
+      <a mat-list-item routerLink="/app/analytics">
+        <mat-icon>bar_chart</mat-icon>
+        <span class="nav-label">Analytics</span>
+      </a>
+      <a mat-list-item routerLink="/app/terminals">
+        <mat-icon>location_on</mat-icon>
+        <span class="nav-label">Terminals</span>
+      </a>
+      <a mat-list-item routerLink="/app/notifications">
+        <mat-icon>notifications</mat-icon>
+        <span class="nav-label">Notifications</span>
+      </a>
+      <a mat-list-item routerLink="/app/providers">
+        <mat-icon>local_gas_station</mat-icon>
+        <span class="nav-label">Providers</span>
+      </a>
+      <a mat-list-item routerLink="/app/workflows">
+        <mat-icon>schema</mat-icon>
+        <span class="nav-label">Workflows</span>
+      </a>
+      <a mat-list-item routerLink="/app/contact-us">
+        <mat-icon>contact_mail</mat-icon>
+        <span class="nav-label">Contact Us</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
