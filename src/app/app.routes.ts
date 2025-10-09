@@ -9,9 +9,9 @@ import {ProvidersComponent} from './control/presentation/components/providers/pr
 
 
 export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-
   {
     path: 'fueltrack',
     component: Layout,
