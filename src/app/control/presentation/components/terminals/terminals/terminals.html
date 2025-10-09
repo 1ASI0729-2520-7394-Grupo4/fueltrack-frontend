@@ -1,0 +1,9 @@
+<h2 class="section-title">Fuel Terminals</h2>
+
+<div class="terminal-list">
+  <mat-card class="terminal-card" *ngFor="let terminal of terminals">
+    <h3>{{ terminal.name }}</h3>
+    <p><strong>Location:</strong> {{ terminal.location }}</p>
+    <p><strong>Status:</strong> <span [ngClass]="terminal.active ? 'active' : 'inactive'">{{ terminal.active ? 'Active' : 'Inactive' }}</span></p>
+  </mat-card>
+</div>

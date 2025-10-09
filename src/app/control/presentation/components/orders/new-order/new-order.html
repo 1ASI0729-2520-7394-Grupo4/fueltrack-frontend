@@ -1,0 +1,114 @@
+<h2>Create Order</h2>
+
+<!-- Order Details -->
+<div *ngIf="step === 0">
+  <h3>Order Information</h3>
+
+  <form [formGroup]="orderForm">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Responsible</mat-label>
+      <input matInput formControlName="responsible">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Dispatch terminal</mat-label>
+      <mat-select formControlName="terminal">
+        <mat-option *ngFor="let terminal of terminals" [value]="terminal">
+          {{ terminal }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div formArrayName="details">
+      <div *ngFor="let detail of details.controls; let i = index" [formGroupName]="i" class="detail-box">
+        <h4>Order Detail #{{ i + 1 }}</h4>
+
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-label>Fuel</mat-label>
+          <mat-select formControlName="fuel">
+            <mat-option *ngFor="let fuel of fuelTypes" [value]="fuel">
+              {{ fuel }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-label>Amount</mat-label>
+          <input matInput formControlName="amount" placeholder="Enter amount">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Additional Note (Optional)</mat-label>
+          <textarea matInput formControlName="note"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button mat-stroked-button color="primary" type="button" (click)="addDetail()">+ Add Detail</button>
+  </form>
+</div>
+
+<!-- Payments -->
+<div *ngIf="step === 1">
+  <h3>Payments</h3>
+
+  <form [formGroup]="orderForm">
+    <div formArrayName="payments">
+      <div *ngFor="let payment of payments.controls; let i = index" [formGroupName]="i" class="payment-box">
+        <h4>Payment #{{ i + 1 }}</h4>
+
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-label>Bank Account</mat-label>
+          <mat-select formControlName="bank">
+            <mat-option *ngFor="let bank of banks" [value]="bank">
+              {{ bank }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-label>Payment Amount</mat-label>
+          <input matInput formControlName="amount">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-label>Date and Hour</mat-label>
+          <input matInput type="date" formControlName="date">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="half-width">
+          <mat-label>Bank Operation Number</mat-label>
+          <input matInput formControlName="operation">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button mat-stroked-button color="primary" type="button" (click)="addPayment()">+ Add Payment</button>
+  </form>
+</div>
+
+<!-- Confirm -->
+<div *ngIf="step === 2">
+  <h3>Order Preview</h3>
+  <p><strong>Responsible:</strong> {{ orderForm?.value?.responsible }}</p>
+  <p><strong>Terminal:</strong> {{ orderForm.value.terminal }}</p>
+
+  <div *ngFor="let d of orderForm.value.details; let i = index">
+    <h4>Detail #{{ i + 1 }}</h4>
+    <p>{{ d.fuel }} — {{ d.amount }} Gal</p>
+    <p><em>{{ d.note }}</em></p>
+  </div>
+
+  <div *ngFor="let p of orderForm?.value?.payments; let i = index">
+    <h4>Payment #{{ i + 1 }}</h4>
+    <p>{{ p.bank }} — {{ p.date }} — S/ {{ p.amount }} — Op: {{ p.operation }}</p>
+  </div>
+</div>
+
+<!-- Navegación -->
+<div class="wizard-buttons">
+  <button mat-button (click)="back()" [disabled]="step === 0">Back</button>
+  <button mat-button *ngIf="step < 2" (click)="next()">Next</button>
+  <button mat-raised-button color="primary" *ngIf="step === 2" (click)="createOrder()">Create Order</button>
+  <button mat-button (click)="close()">Cancel</button>
+</div>
