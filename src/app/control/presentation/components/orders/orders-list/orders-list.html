@@ -1,1 +1,68 @@
-<p>orders-list works!</p>
+<div class="header">
+  <h2>Orders</h2>
+  <p>Quick view of your fuel orders</p>
+  <button mat-raised-button color="primary" class="create-order-btn" (click)="openOrderWizard()">+ Create Order</button>
+</div>
+
+<mat-table [dataSource]="orders" class="mat-elevation-z2" multiTemplateDataRows>
+  <ng-container matColumnDef="expand">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let order">
+      <button mat-icon-button (click)="toggleRow(order); $event.stopPropagation()">
+        <mat-icon>{{ expandedElement === order ? 'expand_less' : 'expand_more' }}</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="created">
+    <mat-header-cell *matHeaderCellDef> Created </mat-header-cell>
+    <mat-cell *matCellDef="let order">
+      {{ order.created }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="user">
+    <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{ order.user }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+    <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{ order.amount }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="terminal">
+    <mat-header-cell *matHeaderCellDef> Terminal </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{ order.terminal }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Order ID </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{ order.id }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+    <mat-cell *matCellDef="let order">
+      <span class="status-chip" [ngClass]="order.status.toLowerCase()">{{ order.status }}</span>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="expandedDetail">
+    <mat-cell *matCellDef="let order" [attr.colspan]="displayedColumns.length">
+      <div class="expanded-content" *ngIf="expandedElement === order">
+        <p><strong>Más detalles:</strong></p>
+        <ul>
+          <li><b>Tipo:</b> Diesel B5</li>
+          <li><b>Entrega estimada:</b> 7 mayo 2025</li>
+          <li><b>Notas:</b> Coordinación previa con seguridad</li>
+        </ul>
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" class="main-row" (click)="toggleRow(row)">
+  </mat-row>
+  <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="expanded-row"></mat-row>
+</mat-table>
