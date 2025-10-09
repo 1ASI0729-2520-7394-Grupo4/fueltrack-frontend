@@ -21,10 +21,10 @@ export class LoginComponent {
   login() {
     if (this.isClient) {
       console.log(`[Client] Email:`, this.email);
-      this.router.navigate(['/orders']);
+      this.router.navigate(['/fueltrack/orders']);
     } else {
       console.log(`[Supplier] RUC:`, this.ruc);
-      this.router.navigate(['/orders-management']);
+      this.router.navigate(['/fueltrack/orders-management']);
     }
     console.log('Password:', this.password);
   }
