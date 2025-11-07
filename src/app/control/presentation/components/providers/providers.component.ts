@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import {ControlStore} from '../../../application/control.store';
 
 @Component({
   selector: 'app-providers',
@@ -10,9 +11,5 @@ import {MatCardModule} from '@angular/material/card';
   styleUrl: './providers.component.css'
 })
 export class ProvidersComponent {
-  providers = [
-    { name: 'PetroFuel S.A.', fuelType: 'GLP', status: 'Active', note: 'Main supplier for Callao terminal.' },
-    { name: 'GasAndes Perú', fuelType: 'Diesel B50', status: 'Inactive', note: 'Pending documentation update.' },
-    { name: 'EcoGas', fuelType: 'GNV', status: 'Active', note: 'New contract signed last month.' }
-  ];
+  readonly store = inject(ControlStore);
 }

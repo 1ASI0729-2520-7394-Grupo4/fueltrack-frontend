@@ -1,0 +1,182 @@
+{
+  "terminals": [
+    {
+      "id": 1,
+      "name": "Terminal Callao",
+      "location": "Callao",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Terminal Lurin",
+      "location": "Lima Sur",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Terminal Pisco",
+      "location": "Pisco",
+      "active": true
+    }
+  ],
+  "providers": [
+    {
+      "id": 1,
+      "name": "PetroFuel S.A.",
+      "fuelType": "GLP",
+      "note": "Main supplier for Callao terminal.",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "GasAndes Perú",
+      "fuelType": "Diesel B50",
+      "note": "Pending documentation update.",
+      "active": false
+    },
+    {
+      "id": 3,
+      "name": "EcoGas",
+      "fuelType": "GNV",
+      "note": "New contract signed last month.",
+      "active": true
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "created": "4 APR, 2025",
+      "user": "Sebastian Rosas",
+      "amount": 4000.00,
+      "terminal": "Callao",
+      "status": "Requested",
+      "details": [
+        {
+          "id": 1,
+          "fuelType": "GNV",
+          "quantity": 1500
+        },
+        {
+          "id": 2,
+          "fuelType": "Gasohol 85",
+          "quantity": 2000
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "created": "5 APR, 2025",
+      "user": "Alberto Jimenez",
+      "amount": 4000.00,
+      "terminal": "Pisco",
+      "status": "Approved",
+      "details": [
+        {
+          "id": 3,
+          "fuelType": "GLP",
+          "quantity": 1750
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "created": "12 APR, 2025",
+      "user": "Maria Meza",
+      "amount": 4000.00,
+      "terminal": "Valero",
+      "status": "Released",
+      "details": [
+        {
+          "id": 4,
+          "fuelType": "GLP",
+          "quantity": 2000
+        },
+        {
+          "id": 5,
+          "fuelType": "Diesel 90",
+          "quantity": 1000
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "created": "12 APR, 2025",
+      "user": "Roger Rodriguez",
+      "amount": 4000.00,
+      "terminal": "Valero",
+      "status": "Approved",
+      "details": [
+        {
+          "id": 6,
+          "fuelType": "GNV",
+          "quantity": 1500
+        },
+        {
+          "id": 7,
+          "fuelType": "Gasohol 85",
+          "quantity": 2000
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "created": "18 APR, 2025",
+      "user": "Sebastian Rosas",
+      "amount": 4000.00,
+      "terminal": "Pisco",
+      "status": "Requested",
+      "details": [
+        {
+          "id": 8,
+          "fuelType": "GNV",
+          "quantity": 1500
+        },
+        {
+          "id": 9,
+          "fuelType": "Gasohol 85",
+          "quantity": 2000
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "created": "18 APR, 2025",
+      "user": "Sebastian Rosas",
+      "amount": 4000.00,
+      "terminal": "Lurin",
+      "status": "Released",
+      "details": [
+        {
+          "id": 10,
+          "fuelType": "GNV",
+          "quantity": 1500
+        },
+        {
+          "id": 11,
+          "fuelType": "Gasohol 85",
+          "quantity": 2000
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "created": "22 APR, 2025",
+      "user": "Sebastian Rosas",
+      "amount": 4000.00,
+      "terminal": "Pisco",
+      "status": "Approved",
+      "details": [
+        {
+          "id": 12,
+          "fuelType": "GNV",
+          "quantity": 1500
+        },
+        {
+          "id": 13,
+          "fuelType": "Gasohol 85",
+          "quantity": 2000
+        }
+      ]
+    }
+  ]
+}

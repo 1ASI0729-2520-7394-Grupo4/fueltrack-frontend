@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
+import {Router} from '@angular/router';
+import {ControlStore} from '../../../../application/control.store';
 
 @Component({
   selector: 'app-terminals',
@@ -12,9 +14,7 @@ import {MatCardModule} from '@angular/material/card';
   styleUrl: './terminals.css'
 })
 export class Terminals {
-  terminals = [
-    { name: 'Terminal Callao', location: 'Callao', active: true },
-    { name: 'Terminal Pisco', location: 'Pisco', active: true },
-    { name: 'Terminal Lurín', location: 'Lima Sur', active: false }
-  ];
+  readonly store = inject(ControlStore);
+
+  displayedColumns:string[] = ["id", "name", "location", "active"];
 }

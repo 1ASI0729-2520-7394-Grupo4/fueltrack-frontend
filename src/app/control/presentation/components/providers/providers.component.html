@@ -1,12 +1,12 @@
 <h2 class="section-title">Fuel Providers</h2>
 
-<mat-card class="provider-card" *ngFor="let provider of providers">
+<mat-card class="provider-card" *ngFor="let provider of store.providers()">
   <div class="card-header">
     <div>
       <h3>{{ provider.name }}</h3>
       <p class="type">{{ provider.fuelType }}</p>
     </div>
-    <span class="status" [ngClass]="provider.status.toLowerCase()">{{ provider.status }}</span>
+    <span class="status" [ngClass]="provider.active ? 'active' : 'inactive'">{{ provider.active ? 'active' : 'inactive' }}</span>
   </div>
   <p class="note">{{ provider.note }}</p>
 </mat-card>

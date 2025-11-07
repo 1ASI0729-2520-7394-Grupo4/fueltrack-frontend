@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -10,6 +10,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatDialog } from '@angular/material/dialog';
 import { RouterLink } from '@angular/router';
 import {NewOrder} from '../new-order/new-order';
+import {ControlStore} from '../../../../application/control.store';
 
 @Component({
   selector: 'app-orders-list',
@@ -28,6 +29,7 @@ import {NewOrder} from '../new-order/new-order';
   styleUrl: './orders-list.css'
 })
 export class OrdersList {
+  readonly store = inject(ControlStore);
   displayedColumns: string[] = [
     'expand',
     'created',
