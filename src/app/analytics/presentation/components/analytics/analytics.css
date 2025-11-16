@@ -1,0 +1,136 @@
+.analytics-container {
+  padding: 24px;
+}
+
+.terminal-select {
+  width: 300px;
+  margin-bottom: 16px;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.reference-line {
+  position: absolute;
+  top: 20%; /* equivalente a 400 gal si 500 = 100% */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  opacity: 0.7;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reference-line span {
+  position: absolute;
+  right: 10px;
+  top: -18px;
+  background: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  color: red;
+  border-radius: 4px;
+}
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+}
+
+.bar-group {
+  background-color: #f97316;
+  position: relative;
+  width: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.bar-guide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to top,
+    #f3f4f6,
+    #f3f4f6 2px,
+    transparent 2px,
+    transparent 20px
+  );
+  border-radius: 4px;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.bars-inline {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 100%;
+  z-index: 1;
+}
+
+.bar {
+  width: 10px;
+  border-radius: 4px;
+  background-color: gray;
+}
+
+.bar.glp {
+  background-color: #22c55e;
+}
+
+.bar.gnv {
+  background-color: #3b82f6;
+}
+
+.bar.diesel {
+  background-color: #f97316;
+}
+
+.label {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #1f2937;
+}
+
+.legend {
+  margin-top: 20px;
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.dot.glp {
+  background-color: #22c55e;
+}
+
+.dot.gnv {
+  background-color: #3b82f6;
+}
+
+.dot.diesel {
+  background-color: #f97316;
+}

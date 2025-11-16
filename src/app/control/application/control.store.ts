@@ -1,7 +1,6 @@
 import {computed, Injectable, Signal, signal} from '@angular/core';
 
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import {retry} from 'rxjs';
 import {Terminal} from '../domain/model/terminal.entity';
 import {ControlApi} from '../infrastructure/control-api';
 import {Provider} from '../domain/model/provider.entity';

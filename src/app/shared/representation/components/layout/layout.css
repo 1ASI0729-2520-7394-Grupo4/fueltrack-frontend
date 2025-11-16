@@ -1,26 +1,100 @@
 .sidenav-container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.sidenav {
-  width: 200px;
-  background-color: #f3f4f6;
+
+/* ===================== CLIENT THEME ===================== */
+.client-theme .sidenav {
+  width: 240px;
+  background: #f3f4f6;
+  color: #333;
+  border-right: 1px solid #ddd;
 }
+
+.client-theme .nav-item {
+  color: #444;
+  border-radius: 8px;
+  margin: 6px 0;
+}
+
+.client-theme .nav-item.active {
+  background-color: #ffcaa1;
+  color: #fff;
+}
+
+.client-theme .nav-item:hover {
+  background-color: #e1e1e1;
+}
+
+.client-theme mat-icon {
+  color: #333;
+}
+
+.client-theme .content {
+  background: #f9f9f9;
+  color: #222;
+  padding: 24px;
+}
+
+.nav-label {
+  font-size: 14px;
+  color: black !important;
+}
+
+/* ===================== SUPPLIER THEME ===================== */
+.supplier-theme .sidenav {
+  width: auto;
+  background: #0f1b33;
+  color: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.supplier-theme .nav-item {
+  color: #cfd8ef;
+  border-radius: 8px;
+  margin: 6px 0;
+}
+
+.supplier-theme .nav-item.active {
+  background-color: #3a4b76;
+  color: #ffffff;
+}
+
+.supplier-theme .nav-item:hover {
+  background-color: #3a4b76;
+}
+
+.supplier-theme mat-icon {
+  color: #9cb2ff;
+}
+
+.supplier-theme .content {
+  background: #15203b;
+  color: #fff;
+  padding: 24px;
+}
+
+.nav-label {
+  font-size: 14px;
+  color: white !important;
+}
+
+/* ===================== COMMON ELEMENTS ===================== */
 .logo-container {
   padding: 16px;
   display: flex;
   justify-content: center;
 }
+
 .logo-img {
   width: 120px;
-}
-.content {
-  padding: 24px;
 }
 
 mat-nav-list a.mat-list-item mat-icon {
   margin-right: 12px;
 }
 
-.nav-label {
-  font-size: 14px;
+.nav-items-container{
+  padding: 0 10px;
 }

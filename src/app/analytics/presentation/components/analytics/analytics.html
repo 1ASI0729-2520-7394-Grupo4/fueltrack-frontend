@@ -1,0 +1,38 @@
+<div class="analytics-container">
+  <h2>Analytics</h2>
+
+  <!-- Selector de terminal -->
+  <mat-form-field appearance="outline" class="terminal-select">
+    <mat-label>Select terminal</mat-label>
+    <mat-select [(value)]="selectedTerminal">
+      <mat-option *ngFor="let t of terminals" [value]="t">{{ t }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Gráfico de barras -->
+  <div class="chart-container">
+    <!-- Línea de referencia -->
+    <div class="reference-line">
+      <span>Referencia: 400</span>
+    </div>
+
+    <div class="chart">
+      <div class="bar-group" *ngFor="let entry of data">
+        <div class="bar-guide"></div>
+        <div class="bars-inline">
+          <div class="bar glp" [style.height.%]="entry.GLP * 0.2"></div>
+          <div class="bar gnv" [style.height.%]="entry.GNV * 0.2"></div>
+          <div class="bar diesel" [style.height.%]="entry.Diesel * 0.2"></div>
+        </div>
+        <span class="label">{{ entry.day }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leyenda -->
+  <div class="legend">
+    <div><span class="dot glp"></span> GLP</div>
+    <div><span class="dot gnv"></span> GNV</div>
+    <div><span class="dot diesel"></span> Diesel B50</div>
+  </div>
+</div>

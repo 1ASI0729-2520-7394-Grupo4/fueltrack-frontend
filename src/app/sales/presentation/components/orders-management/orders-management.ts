@@ -7,13 +7,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatBadgeModule } from '@angular/material/badge';
-import { MatDialog } from '@angular/material/dialog';
-import { RouterLink } from '@angular/router';
-import {NewOrder} from '../new-order/new-order';
-import {ControlStore} from '../../../../application/control.store';
+import { Router, RouterModule } from '@angular/router';
+import {ControlStore} from '../../../../control/application/control.store';
 
 @Component({
-  selector: 'app-orders-list',
+  selector: 'app-orders-management',
   imports: [
     CommonModule,
     MatTableModule,
@@ -23,15 +21,17 @@ import {ControlStore} from '../../../../application/control.store';
     MatIconModule,
     MatListModule,
     MatBadgeModule,
-    RouterLink,
+    RouterModule,
   ],
-  templateUrl: './orders-list.html',
-  styleUrl: './orders-list.css'
+  templateUrl: './orders-management.html',
+  styleUrl: './orders-management.css'
 })
-export class OrdersList {
-  constructor(private dialog: MatDialog) {}
+export class OrdersManagement {
+  constructor(private router: Router) {}
 
   readonly store = inject(ControlStore);
+
+  expandedElement: any | null = null;
 
   displayedColumns: string[] = [
     'expand',
@@ -40,19 +40,15 @@ export class OrdersList {
     'amount',
     'terminal',
     'id',
-    'status',
   ];
 
-  expandedElement: any | null = null;
-
+  isActive(route: string): boolean {
+    return this.router.url === route;
+  }
+  isExpandedRow(index: number, row: any): boolean {
+    return this.expandedElement === row;
+  }
   toggleRow(row: any) {
     this.expandedElement = this.expandedElement?.id === row.id ? null : row;
-  }
-
-  openOrderWizard(): void {
-    this.dialog.open(NewOrder, {
-      width: '800px',
-      panelClass: 'custom-dialog-container',
-    });
   }
 }

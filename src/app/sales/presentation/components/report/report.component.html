@@ -1,0 +1,32 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content class="main-content">
+    <div class="page-header">
+      <div class="title-block">
+        <h1>Sales Report</h1>
+        <p>Monitor monthly sales performance</p>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <div style="background: rgba(34,49,75,0.95); border-radius: 16px; box-shadow: 0 4px 24px #0002; padding: 1.5rem 2.5rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+        <label for="format-select" style="font-weight: 600; font-size: 1.1rem; color: #aab2e1;">Formato:</label>
+        <mat-form-field appearance="fill" style="min-width: 120px;">
+          <mat-label>Formato</mat-label>
+          <mat-select id="format-select" [(ngModel)]="selectedFormat">
+            <mat-option value="csv">CSV</mat-option>
+            <mat-option value="pdf">PDF</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="accent" style="font-weight: bold; font-size: 1.1rem; box-shadow: 0 2px 8px #0003; padding: 0.7rem 2.2rem; border-radius: 8px;" (click)="downloadReport()">
+          Descargar reporte
+        </button>
+      </div>
+    </div>
+    <div style="max-width: 700px; margin: 0 auto; background: #22314b; padding: 2rem; border-radius: 12px;">
+      <canvas baseChart
+              [data]="barChartData"
+              [options]="barChartOptions"
+              [type]="'bar'">
+      </canvas>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

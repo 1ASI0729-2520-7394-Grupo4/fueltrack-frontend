@@ -20,13 +20,12 @@ export class LoginComponent {
 
   login() {
     if (this.isClient) {
-      console.log(`[Client] Email:`, this.email);
-      this.router.navigate(['/fueltrack/orders']);
+      localStorage.setItem('userType', 'client');
+      this.router.navigate(['/client/orders']);
     } else {
-      console.log(`[Supplier] RUC:`, this.ruc);
-      this.router.navigate(['/fueltrack/orders-management']);
+      localStorage.setItem('userType', 'supplier');
+      this.router.navigate(['/supplier/orders-management']);
     }
-    console.log('Password:', this.password);
   }
 
   toggleLogin() {

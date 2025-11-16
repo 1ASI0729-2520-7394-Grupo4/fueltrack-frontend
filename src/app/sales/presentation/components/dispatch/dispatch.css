@@ -1,0 +1,171 @@
+/* --- contenedor general --- */
+.sidenav-container {
+  height: 100vh;
+  background: #1F2A46;
+}
+
+/* --- Contenido principal --- */
+.main-content {
+  padding: 1.5rem;
+  color: #fff;
+}
+
+/* Header + breadcrumb */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-block h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.title-block p {
+  margin: 0;
+  color: #AAB2E1;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  color: #7A81A3;
+  font-size: 14px;
+}
+
+.breadcrumb mat-icon {
+  font-size: 16px;
+  margin: 0 0.25rem;
+}
+
+.page-subcontent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  background: #1F2A46;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat .value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #27AE60;
+}
+
+.stat .label {
+  font-size: 0.875rem;
+  color: #B0BCE1;
+}
+
+.divider {
+  width: 1px;
+  height: 2rem;
+  background: #33415A;
+  margin: 0 1.5rem;
+}
+
+/* Tabs + filtros */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab {
+  height: 32px;
+  line-height: 32px;
+  border-radius: 16px;
+  font-size: 0.875rem;
+}
+
+.tab.active {
+  background: #ff740c;
+  border: none;
+  color: #fff;
+}
+
+.filter-buttons button {
+  margin-left: 0.75rem;
+}
+
+.table-container {
+  border-radius: 6px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 800px;
+  color: #fff;
+  background-color: #1E3A5F !important;
+}
+
+.mat-mdc-header-row {
+  color: #fff;
+  font-size: 12px !important;
+}
+
+.mat-mdc-row {
+  color: #fff;
+  font-size: 12px !important;
+}
+
+.icon-white {
+  color: #fff !important;
+}
+
+.icon-green {
+  color: #008000 !important;
+}
+
+th.mat-header-cell {
+  font-weight: 600;
+  color: #8892B0;
+  border-bottom: 1px solid #33415A;
+}
+
+td.mat-cell {
+  border-bottom: 1px solid #33415A;
+  vertical-align: middle;
+}
+
+.expanded-row {
+  background: #15203B;
+}
+
+.expanded-content {
+  padding: 1rem;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+}
+
+.mat-btn-content {
+  display: flex;
+}
+
+.mat-btn-badge {
+  margin: 1rem;
+  background-color: red;
+  border-radius: 0.25rem;
+}
