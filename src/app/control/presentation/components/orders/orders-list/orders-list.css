@@ -82,8 +82,9 @@
 }
 
 .expanded-content {
-  background-color: #f3f4f6;
+  background-color: #eeeef1;
   padding: 16px;
+  margin: 16px 0;
   border-left: 4px solid #22c55e;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -92,4 +93,12 @@
 
 .expanded-row {
   background-color: #f9fafb;
+}
+
+.hidden-row {
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  visibility: collapse !important;
 }

@@ -64,7 +64,16 @@
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" class="main-row" (click)="toggleRow(row)">
+
+  <mat-row
+    *matRowDef="let row; columns: displayedColumns;"
+    class="main-row"
+    (click)="toggleRow(row)">
   </mat-row>
-  <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="expanded-row"></mat-row>
+
+  <mat-row
+    *matRowDef="let row; columns: ['expandedDetail']"
+    class="expanded-row"
+    [class.hidden-row]="expandedElement !== row">
+  </mat-row>
 </mat-table>

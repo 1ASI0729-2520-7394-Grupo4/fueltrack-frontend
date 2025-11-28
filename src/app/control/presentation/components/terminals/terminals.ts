@@ -2,7 +2,7 @@ import {Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MatCardModule} from '@angular/material/card';
 import {Router} from '@angular/router';
-import {ControlStore} from '../../../../application/control.store';
+import {ControlStore} from '../../../application/control.store';
 
 @Component({
   selector: 'app-terminals',

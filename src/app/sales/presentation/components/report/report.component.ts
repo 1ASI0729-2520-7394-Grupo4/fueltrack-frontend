@@ -5,7 +5,6 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatListModule, MatNavList} from '@angular/material/list';
 import { Router, RouterModule } from '@angular/router';
 import { BaseChartDirective } from 'ng2-charts';
-import { saveAs } from 'file-saver';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -66,7 +65,6 @@ export class Report {
     );
     const csvContent = 'Month,Sales\n' + rows.join('\n');
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    saveAs(blob, 'sales-report.csv');
   }
 
   downloadPDF() {

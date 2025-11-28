@@ -23,19 +23,21 @@
       <div *ngFor="let detail of details.controls; let i = index" [formGroupName]="i" class="detail-box">
         <h4>Order Detail #{{ i + 1 }}</h4>
 
-        <mat-form-field appearance="fill" class="half-width">
-          <mat-label>Fuel</mat-label>
-          <mat-select formControlName="fuel">
-            <mat-option *ngFor="let fuel of fuelTypes" [value]="fuel">
-              {{ fuel }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="input-container">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Fuel</mat-label>
+            <mat-select formControlName="fuel">
+              <mat-option *ngFor="let fuel of fuelTypes" [value]="fuel">
+                {{ fuel }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
-        <mat-form-field appearance="fill" class="half-width">
-          <mat-label>Amount</mat-label>
-          <input matInput formControlName="amount" placeholder="Enter amount">
-        </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Amount</mat-label>
+            <input matInput formControlName="amount" placeholder="Enter amount">
+          </mat-form-field>
+        </div>
 
         <mat-form-field appearance="fill" class="full-width">
           <mat-label>Additional Note (Optional)</mat-label>
@@ -57,29 +59,34 @@
       <div *ngFor="let payment of payments.controls; let i = index" [formGroupName]="i" class="payment-box">
         <h4>Payment #{{ i + 1 }}</h4>
 
-        <mat-form-field appearance="fill" class="half-width">
-          <mat-label>Bank Account</mat-label>
-          <mat-select formControlName="bank">
-            <mat-option *ngFor="let bank of banks" [value]="bank">
-              {{ bank }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+        <div class="input-container">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Bank Account</mat-label>
+            <mat-select formControlName="bank">
+              <mat-option *ngFor="let bank of banks" [value]="bank">
+                {{ bank }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
-        <mat-form-field appearance="fill" class="half-width">
-          <mat-label>Payment Amount</mat-label>
-          <input matInput formControlName="amount">
-        </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Payment Amount</mat-label>
+            <input matInput formControlName="amount">
+          </mat-form-field>
+        </div>
 
-        <mat-form-field appearance="fill" class="half-width">
-          <mat-label>Date and Hour</mat-label>
-          <input matInput type="date" formControlName="date">
-        </mat-form-field>
+        <div class="input-container">
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Date and Hour</mat-label>
+            <input matInput type="date" formControlName="date">
+          </mat-form-field>
 
-        <mat-form-field appearance="fill" class="half-width">
-          <mat-label>Bank Operation Number</mat-label>
-          <input matInput formControlName="operation">
-        </mat-form-field>
+          <mat-form-field appearance="fill" class="half-width">
+            <mat-label>Bank Operation Number</mat-label>
+            <input matInput formControlName="operation">
+          </mat-form-field>
+        </div>
+
       </div>
     </div>
 
