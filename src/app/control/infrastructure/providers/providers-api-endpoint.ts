@@ -12,7 +12,7 @@ export class ProvidersApiEndpoint extends
   constructor(http: HttpClient) {
     super(
       http,
-      `${environment.platformApiBaseUrl}${environment.platformApiProvidersEndpointPath}`,
+      `${environment.fakeApiBaseUrl}${environment.platformApiProvidersEndpointPath}`,
       new ProvidersAssembler()
     );
   }

@@ -12,7 +12,7 @@ export class TerminalsApiEndpoint extends
   constructor(http: HttpClient) {
     super(
       http,
-      `${environment.platformApiBaseUrl}${environment.platformApiTerminalsEndpointPath}`,
+      `${environment.fakeApiBaseUrl}${environment.platformApiTerminalsEndpointPath}`,
       new TerminalsAssembler()
     );
   }
