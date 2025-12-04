@@ -8,7 +8,7 @@
 
 <div class="register-container">
   <div class="register-card">
-    <img src="assets/logo-fueltrack.png" alt="FuelTrack Logo" class="logo" />
+    <img src="/src/assets/logo-fueltrack.png" alt="FuelTrack Logo"  />
 
     <h2>Registro</h2>
 
@@ -16,6 +16,8 @@
       <button [class.active]="isClient" (click)="toggleRole('client')">Solicitante</button>
       <button [class.active]="!isClient" (click)="toggleRole('supplier')">Proveedor</button>
     </div>
+
+
 
     <form>
       <label>Email:</label>

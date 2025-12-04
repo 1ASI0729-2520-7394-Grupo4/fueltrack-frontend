@@ -199,13 +199,7 @@ button[type="button"]:hover, .register-btn:hover {
   z-index: 1000;
 }
 
-/* Logo */
-.logo {
-  font-weight: bold;
-  font-size: 22px;
-  color: #0c4a6e;
-  letter-spacing: 1px;
-}
+
 
 /* Navegación */
 .nav {
@@ -261,3 +255,20 @@ button[type="button"]:hover, .register-btn:hover {
   transform: scale(1.05);
 }
 
+.error-message {
+  background-color: #fee;
+  border: 1px solid #fcc;
+  color: #c00;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.loading-message {
+  background-color: #e7f3ff;
+  border: 1px solid #b3d9ff;
+  color: #0066cc;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
