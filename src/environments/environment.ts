@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  platformApiBaseUrl: 'http://localhost:3000',
+  platformApiBaseUrl: 'https://fueltrack-backend-production.up.railway.app/api',
   platformApiTerminalsEndpointPath: '/terminals',
   platformApiProvidersEndpointPath: '/providers',
   platformApiOrdersEndpointPath: '/orders',
