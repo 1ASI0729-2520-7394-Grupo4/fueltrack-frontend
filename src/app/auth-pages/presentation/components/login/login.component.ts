@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { AuthStore } from '../../../application/auth.store';
 
 @Component({
   selector: 'app-login',
@@ -12,20 +13,46 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class LoginComponent {
   isClient = true;
+
   email = '';
   ruc = '';
   password = '';
 
-  constructor(private router: Router) {}
+  loading = false;
+  error: string | null = null;
+
+  constructor(private router: Router, private auth: AuthStore) {}
 
   login() {
-    if (this.isClient) {
-      localStorage.setItem('userType', 'client');
-      this.router.navigate(['/client/orders']);
-    } else {
-      localStorage.setItem('userType', 'supplier');
-      this.router.navigate(['/supplier/orders-management']);
+    this.error = null;
+
+    const username = this.email;
+    const password = this.password;
+
+    if (!username || !password) {
+      this.error = 'Completa todos los campos.';
+      return;
     }
+
+    this.loading = true;
+
+    this.auth.login(username, password).subscribe({
+      next: () => {
+        this.loading = false;
+
+        if (this.isClient) {
+          this.router.navigate(['/client/orders']);
+        } else {
+          this.router.navigate(['/supplier/orders-management']);
+        }
+      },
+      error: (err) => {
+        this.loading = false;
+        this.error =
+          err?.error?.message ||
+          'Error al iniciar sesión. Intenta nuevamente.';
+      }
+    });
   }
 
   toggleLogin() {
@@ -35,4 +62,3 @@ export class LoginComponent {
     this.password = '';
   }
 }
-

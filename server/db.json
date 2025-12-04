@@ -23,21 +23,18 @@
     {
       "id": 1,
       "name": "PetroFuel S.A.",
-      "fuelType": "GLP",
       "note": "Main supplier for Callao terminal.",
       "active": true
     },
     {
       "id": 2,
       "name": "GasAndes Perú",
-      "fuelType": "Diesel B50",
       "note": "Pending documentation update.",
       "active": false
     },
     {
       "id": 3,
       "name": "EcoGas",
-      "fuelType": "GNV",
       "note": "New contract signed last month.",
       "active": true
     }
