@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   platformApiBaseUrl: 'https://fueltrack-backend-production.up.railway.app/api',
-  fakeApiBaseUrl: 'https://fake-api-fueltrack.onrender.com/',
+  fakeApiBaseUrl: 'https://fake-api-fueltrack.onrender.com',
   platformApiTerminalsEndpointPath: '/terminals',
   platformApiProvidersEndpointPath: '/providers',
   platformApiOrdersEndpointPath: '/orders',
